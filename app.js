@@ -41,10 +41,18 @@ app.get("/posts/:other", function(req, res){
 			res.render("post",{postTitle :postsArray[i].title , postContent: postsArray[i].Content });
 		}
 		else{
-			
+			res.sendFile(__dirname+"/failure.html");
 		}
 	}
 });
+
+app.post("/failure.html", function(req, res){
+	if(req.body.value === 'Go back'){
+		res.redirect("/");
+	}
+});
+
+
 
 
 

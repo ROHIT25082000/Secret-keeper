@@ -33,6 +33,12 @@ app.get("/contact", function(req ,res){
 app.get("/compose", function(req, res){
 	res.render("compose")
 });
+app.get("/posts/:other", function(req, res){
+	if(postsArray.includes(req.params.other)){
+		console.log("Match found !");
+	}
+
+})
 
 app.post("/compose" ,function(req, res){
 	const myPost = {};

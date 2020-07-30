@@ -4,7 +4,7 @@
     <br>
     <% for(var i = 0; i < postsArray.length ; i++){ %>
     <h3><%= postsArray[i].title %></h3> 
-    <p><%= postsArray[i].Content %></p>
+    <p class="preview"><%= postsArray[i].Content %></p>
     <%}%>
 <%- include('partials/footer'); -%>
 

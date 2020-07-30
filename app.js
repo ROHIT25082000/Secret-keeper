@@ -48,7 +48,6 @@ app.get("/posts/:other", function(req, res){
 
 app.post("/failure", function(req, res){
 	res.redirect("/");
-	console.log(req.body.value);
 });
 
 
@@ -56,8 +55,6 @@ app.post("/compose" ,function(req, res){
 	const myPost = {};
 	myPost['title'] = req.body.myPostHeading;
 	myPost['Content'] = req.body.myPostContent;
-	console.log(myPost.title);
-	console.log(myPost.Content);
 	postsArray.push(myPost);
 	res.redirect("/");
 });
@@ -66,6 +63,6 @@ app.get("/post", function(req ,res){
 	res.redirect("/");
 });
 
-app.listen(4000, function() {
+app.listen(process.env.PORT||4000, function() {
   console.log("Server started on port 4000");
 });

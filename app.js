@@ -38,10 +38,10 @@ app.get("/posts/:other", function(req, res){
 	const requested = req.params.other;
 	for(var i = 0; i < postsArray.length; i++){
 		if(_.lowerCase(requested) === _.lowerCase(postsArray[i].title)){
-			console.log("Found here ");
+			res.render("post",{postTitle :postsArray[i].title , postContent: postsArray[i].Content });
 		}
 		else{
-			console.log("Not Found ");
+			
 		}
 	}
 });

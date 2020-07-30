@@ -6,7 +6,8 @@ clone the repository
 and please fulfill  the following requirements 
 nodev12+ and npm <br> by typing the following 
 <code>$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</code> this will install node and npm 
-downloading nodemon is optional
+downloading nodemon is optional<br>
+<br>
 <code>$ npm install</code><br>
 it will automatically install dependencies 
 

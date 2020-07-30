@@ -41,19 +41,15 @@ app.get("/posts/:other", function(req, res){
 			res.render("post",{postTitle :postsArray[i].title , postContent: postsArray[i].Content });
 		}
 		else{
-			res.sendFile(__dirname+"/failure.html");
+			res.render("failure");
 		}
 	}
 });
 
-app.post("/failure.html", function(req, res){
-	if(req.body.value === 'Go back'){
-		res.redirect("/");
-	}
+app.post("/failure", function(req, res){
+	res.redirect("/");
+	console.log(req.body.value);
 });
-
-
-
 
 
 app.post("/compose" ,function(req, res){
@@ -70,6 +66,6 @@ app.get("/post", function(req ,res){
 	res.redirect("/");
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(4000, function() {
+  console.log("Server started on port 4000");
 });
